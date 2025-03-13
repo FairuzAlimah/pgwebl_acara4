@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\PolygonsModel;
 
 class PolygonsController extends Controller
 {
+    public function __construct()
+    {
+        $this->polygons = new PolygonsModel();
+    }
     /**
      * Display a listing of the resource.
      */
@@ -27,7 +32,38 @@ class PolygonsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validate request
+        $request->validate(
+            [
+                'name' => 'required|unique:polygons,name',
+                'description' => 'required',
+                'geom_polygon' => 'required',
+            ],
+            [
+                'name.required' => 'Name is Required',
+                'name.unique' => 'Name Already Exists',
+                'description.required' => 'Description is Required',
+                'geom_polygon.required' => 'Geometry Polygon is Required',
+
+            ]
+
+        );
+
+
+        $data = [
+            'geom' => $request->geom_polygon,
+            'name' => $request->name,
+            'description' => $request->description,
+        ];
+
+
+        //Create Data
+        if (!$this->polygons->create($data)) {
+            return redirect()->route('map')->with('error', 'Polygon Failed to Add');
+        }
+
+        //kembali ke map
+        return redirect()->route('map')->with('success', 'Polygon has been Added');
     }
 
     /**
