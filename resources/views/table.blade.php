@@ -5,44 +5,28 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Nama</th>
-                <th>NIM</th>
-                <th>Kelas</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Created at</th>
+                <th>Updated at</th>
             </tr>
         </thead>
         <tbody>
+
+            @foreach ($points as $p)
             <tr>
-
-                <td>1</td>
-                <td>Fay</td>
-                <td>514254</td>
-                <td>A</td>
-
+                <td>{{$p->id}}</td>
+                <td>{{$p->name}}</td>
+                <td>{{$p->description}}</td>
+                <td>
+                    <img src="{{asset('storage/images/' . $p->image)}}" alt=""
+                width="200" title="{{$p->image}}"></td>
+                <td>{{$p->created_at}}</td>
+                <td>{{$p->updated_at}}</td>
             </tr>
-            <tr>
+            @endforeach
 
-                <td>2</td>
-                <td>Huda</td>
-                <td>512544</td>
-                <td>B</td>
-
-            </tr>
-            <tr>
-
-                <td>1</td>
-                <td>Ulya</td>
-                <td>542541</td>
-                <td>A</td>
-
-            </tr>
-            <tr>
-
-                <td>1</td>
-                <td>Alim</td>
-                <td>512454</td>
-                <td>A</td>
-
-            </tr>
         </tbody>
     </table>
 @endsection
