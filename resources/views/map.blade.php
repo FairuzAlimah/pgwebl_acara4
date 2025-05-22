@@ -249,7 +249,9 @@
                     "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`sure it will be deleted??`)'><i class='fa-solid fa-trash-can'></i></button>" +
                     "</form>" +
                     "</div>" +
-                    "</div>";
+                    "</div>" + "<br>" +
+                    "<p>Dibuat: " + feature.properties.user_created + "</p>"
+                    ;
 
                 layer.on({
                     click: function(e) {
@@ -297,7 +299,11 @@
                     "<form method='POST' action='" + routedelete + "'>" +
                     '@csrf' + '@method('DELETE')' +
                     "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`sure it will be deleted??`)'><i class='fa-solid fa-trash-can'></i></button>" +
-                    "</form>";
+                    "</form>" +
+                    "</div>" +
+                    "</div>" + "<br>" +
+                    "<p>Dibuat: " + feature.properties.user_created + "</p>"
+                    ;
 
                 layer.on({
                     click: function(e) {
@@ -346,7 +352,13 @@
                     "<form method='POST' action='" + routedelete + "'>" +
                     '@csrf' + '@method('DELETE')' +
                     "<button type='submit' class='btn btn-danger btn-sm' onclick='return confirm(`sure it will be deleted??`)'><i class='fa-solid fa-trash-can'></i></button>" +
-                    "</form>";
+                    "</form>" +
+                    "</div>" +
+                    "</div>" + "<br>" +
+                    "<p>Dibuat: " + feature.properties.user_created + "</p>"
+                    ;
+
+
                 layer.on({
                     click: function(e) {
                         polygon.bindPopup(popupContent);

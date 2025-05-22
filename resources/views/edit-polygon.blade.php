@@ -115,8 +115,6 @@
 
                 //menampilkan modal edit
                 $('#editpolygonModal').modal('show');
-
-
             });
         });
         //GeoJson Polygon

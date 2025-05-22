@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PointsModel;
 use Illuminate\Http\Request;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class PointsController extends Controller
 {
@@ -43,6 +44,7 @@ class PointsController extends Controller
                 'description' => 'required',
                 'geom_point' => 'required',
                 'image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:10240',
+
             ],
             [
                 'name.required' => 'Name is Required',
@@ -74,6 +76,7 @@ class PointsController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'image' => $name_image,
+            'user_id' => auth()->user()->id,
         ];
 
 

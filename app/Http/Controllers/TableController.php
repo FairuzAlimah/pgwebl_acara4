@@ -13,7 +13,7 @@ class TableController extends Controller
     public function __construct()
     {
         $this->points = new PointsModel();
-        $this->plylines = new PolylinesModel();
+        $this->polylines = new PolylinesModel();
         $this->polygons = new PolygonsModel();
 
     }
