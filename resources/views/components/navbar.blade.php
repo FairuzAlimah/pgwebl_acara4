@@ -33,13 +33,14 @@
                 @endauth
             </ul>
 
-            <!-- Menu Kanan (Logout) -->
+
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 @auth
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button class="nav-link text-danger" type="submit"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                        <button class="nav-link text-danger" type="submit"><i class="fa-solid fa-right-from-bracket">
+                            </i> Logout</button>
                     </form>
                 </li>
                 @endauth

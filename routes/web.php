@@ -25,6 +25,8 @@ Route::resource('polylines', PolylinesController::class);
 Route::resource('polygons', PolygonsController::class);
 
 Route::get('/map', [PointsController::class, 'index'])->middleware(['auth', 'verified'])->name('map');
+//Route::get('/map', [PolylinesController::class, 'index'])->middleware(['auth', 'verified'])->name('map');
+//Route::get('/map', [PolygonsController::class, 'index'])->middleware(['auth', 'verified'])->name('map');
 Route::get('/table', [TableController::class, 'index'])->name('table');
 
 

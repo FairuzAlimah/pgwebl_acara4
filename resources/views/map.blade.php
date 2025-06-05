@@ -355,7 +355,7 @@
                     "</form>" +
                     "</div>" +
                     "</div>" + "<br>" +
-                    "<p>Dibuat: " + feature.properties.user_created + "</p>"
+                    "<p>Dibuat Oleh: " + feature.properties.user_created + "</p>"
                     ;
 
 
